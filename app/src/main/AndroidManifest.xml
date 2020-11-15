@@ -2,29 +2,40 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android_tesstwo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 카메라 권한 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 저장소 읽기 권한 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-
-    <uses-permission android:name="android.permission.CAMERA"></uses-permission> <!--카메라 권한-->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>    <!--저장소 읽기 권한-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>    <!--저장소 쓰기 권한-->
+    <uses-feature android:name="android.hardware.camera2" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/abc"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:configChanges="orientation|keyboardHidden"> <!--화면 회전시 데이터 새로고침 방지-->
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".WebMainActivity"
+            android:configChanges="orientation|keyboardHidden"> <!-- 화면 회전시 데이터 새로고침 방지 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden"> <!-- 화면 회전시 데이터 새로고침 방지 -->
+        </activity>
+        <activity android:name="com.example.android_tesstwo.MainActivity2"/>
+        <activity android:name="com.example.android_tesstwo.MainpageActivity"/>
+        <activity android:name="com.example.android_tesstwo.DiaryWriteActivity"/>
+        <activity android:name="com.example.android_tesstwo.DiaryReadActivity"/>
+        <activity android:name="com.example.android_tesstwo.LoginPopupActivity"/>
+
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.android_tesstwo.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">

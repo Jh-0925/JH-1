@@ -1,2 +1,2 @@
-# Android-TessTwo
-OCR을 이용하여 이미지글자를 인식하여 텍스트로 변환해주는 샘플앱 입니다.
+# ict_project
+테서 랙트 OCR 활용 다이어리
